@@ -10,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository and setup java
+      # Backend
+      - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
@@ -20,9 +23,11 @@ jobs:
       - name: Validate, compile, test and package maven project
         run: mvn package
 
-    steps:
+      # Frontend
       - name: Checkout repository and setup Node
         uses: actions/checkout@v4
+
+      - name: Setup Node  
         uses: actions/setup-node@v4
         with:
           node-version: "20"
