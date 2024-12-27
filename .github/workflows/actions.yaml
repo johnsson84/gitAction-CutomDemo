@@ -25,7 +25,11 @@ jobs:
       #  run: mvn -B package --file ./backend/pom.xml
 
       # Frontend
-      - name: Checkout repository and setup Node
+
+      - name: and
+        run: cd frontend
+
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node  
