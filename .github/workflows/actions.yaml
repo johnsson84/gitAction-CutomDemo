@@ -37,7 +37,7 @@ jobs:
           cache-dependency-path: './frontend/'
 
       - name: Install deps
-        run: npm ci
+        run: npm ci --force
 
       - name: Run tests
         run: npm test
