@@ -36,8 +36,10 @@ jobs:
           cache: "npm"
           cache-dependency-path: './frontend/'
 
-      - name: Install deps
+      - name: package-lock
         run: npm install --package-lock-only
+
+      - name: Install deps
         run: npm ci
 
       - name: Run tests
