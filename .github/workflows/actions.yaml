@@ -11,18 +11,18 @@ jobs:
 
     steps:
       # Backend
-      #- name: Checkout repository
-      #  uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      #- name: Setup Java
-      #  uses: actions/setup-java@v4
-      #  with:
-      #    distribution: 'temurin'
-      #    java-version: '17'
-      #    cache: 'maven'
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
   
-      #- name: Validate, compile, test and package maven project
-      #  run: mvn -B package --file ./backend/pom.xml
+      - name: Validate, compile, test and package maven project
+        run: mvn -B package --file ./backend/pom.xml
 
       # Frontend
 
