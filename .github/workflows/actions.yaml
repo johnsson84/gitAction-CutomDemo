@@ -19,9 +19,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+          cache: 'maven'
   
       - name: Validate, compile, test and package maven project
-        run: mvn package
+        run: mvn -B package --file pom.xml
 
       # Frontend
       - name: Checkout repository and setup Node
