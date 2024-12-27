@@ -38,8 +38,8 @@ jobs:
 
       - name: Install deps
         run: npm ci
-        working_dir: './frontend/'
+        working_directory: './frontend/'
 
       - name: Run tests
         run: npm test
-        working_dir: './frontend/'
+        working_directory: './frontend/'
