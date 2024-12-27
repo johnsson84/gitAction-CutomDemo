@@ -26,22 +26,21 @@ jobs:
 
       # Frontend
 
-      - name: and
-        run: cd pwd && ls
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      #- name: Checkout repository
-        #  uses: actions/checkout@v4
+      - name: Setup Node  
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
 
-      #- name: Setup Node  
-        #  uses: actions/setup-node@v4
-        #with:
-        #  node-version: "20"
-        #  cache: "npm"
+      - name: Install deps
+        run: |
+          cd frontend
+          npm ci
 
-      #- name: test
-        #  run: pwd && ls
-      #- name: Install deps
-      #run: cd frontend && npm ci
-
-      #- name: Run tests
-      #  run: cd frontend && npm test
+      - name: Run tests
+        run: |
+          cd frontend 
+          npm test
